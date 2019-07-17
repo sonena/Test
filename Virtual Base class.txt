@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+//Parent  class
+class base{
+    
+    public:
+        int i;
+ };
+ //derived1 inherited from parent class
+ class derived1 : virtual public base{
+ 
+    public:
+        int j;
+  };      
+      
+  class derived2 : virtual public base{
+  
+      public:
+        int k;
+  };
+  
+  class derived3 : virtual public derived1,virtual public derived2{
+  
+    public:
+      int sum;
+      
+  };
+  
+  int main()
+  {
+  
+    derived3 ob;
+    ob.i = 2;
+    ob.j = 3;
+    ob.k = 5;
+  
+    ob.sum = ob.i + ob.j + ob.k;
+  
+    cout << "sum  = " <<ob.sum;
+  
+    return 0;
+  }
